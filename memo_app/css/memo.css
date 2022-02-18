@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+html {
+    /* ブラウザのデフォルトが16px                        */
+    /* デフォルトの16pxの代わりに1emが10pxになるように調整 */
+    font-size: 62.5%;
+  }
+
+body{
+  line-height: 1.5;
+  font-size: 1.6rem; /* 16px */
+  font-family: "Helvetica Neue",
+  Arial,
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+  text-align: center;
+  background-color:rgba(240, 230, 239, 0.2);
+  background-blend-mode: soft-light;
+   background-image: url(../img/Memo.jpg); 
+   background-attachment: fixed;
+   background-size: cover ; 
+}
+
+header, main, footer, h1, h2, h3, p, div, table, .field, .btn-area, .filler01 {
+/*    margin: 0em 0em 0em 0em;*/
+    padding: 0.1em;
+    margin-left:auto;
+  margin-right:auto;
+}
+th, td {
+    line-height: 1.2em;
+    padding: 0.1em;
+}
+/*******************************************************/
+/* 見出し                                              */
+/*******************************************************/
+.m{
+    color: rgb(219, 82, 82);
+    font-weight: 1000;
+    text-shadow: 0 0 4px #000000, 0 0 4px #000000;
+    display: inline-block;
+    border: 2px solid rgb(128, 131, 133);
+    outline: 1px solid rgb(0, 0, 0);
+    border-radius: 16px;
+    padding: 2px 8px;
+    background-color: rgba(18, 155, 155, 0.384);
+}
+.l{
+    color: rgba(53, 145, 199, 0.932);
+    font-weight: 1000;
+    text-shadow: 0 0 4px #000000, 0 0 4px #000000;
+    display: inline-block;
+    border: 2px solid rgb(128, 131, 133);
+    outline: 1px solid rgb(0, 0, 0);
+    border-radius: 16px;
+    padding: 2px 8px;
+}
+
+/*******************************************************/
+/* メイン                                              */
+/*******************************************************/
+/* KEY 入力エリア */
+.field01 {
+   position: relative; 
+  height: 5em;
+  /* width: auto; */
+/*  align-content: center;*/
+  margin-top: 35px;
+  padding-right:6em;
+  /* margin-right: 100px; */
+    
+
+}
+/* MEMO 入力エリア */
+.field02 {
+  padding-right:7.5em;
+   position: static; 
+  height: 10em;
+  /* margin-right: 120px; */
+}
+/* ラベル */
+label {
+   
+  vertical-align: middle;
+  left:0.5em;
+  color: rgba(9, 198, 255, 0.568);
+/*  text-shadow: 2px rgb(255, 255, 255);*/
+  font-size: larger;
+  font-weight: 1000;
+  margin: 1px;
+    margin-left:auto;
+  margin-right:auto;
+}
+
+label::after{ 
+  margin-left : 1.0 em;
+  padding : 0px 6px 0px 6px;
+  border:1px solid rgba(22, 110, 4, 0.938);
+  border-radius : 4px ;
+  font-size : 0.6em;
+  color : rgb(0, 0, 0);
+  background-color : rgb(219, 82, 82);
+  content : "必須";
+}
+
+/* テキストエリア */
+textarea{
+  vertical-align: middle;
+  align-content: center;;
+  width: auto;
+  top: 2.5em;
+  left: 3.5em;
+  background-color: #e3f3e78f;
+  border-radius: 0.5em;
+}
+
+textarea::placeholder {
+  color : #0081dd;
+  font-style: bold;
+  font-weight: 2px;
+  border-radius: 0.5em;
+    margin-left:auto; margin-right:auto;
+
+}
+
+/* ボタン */
+.btn-area{
+  margin-left:3em;
+  text-align: left;
+}
+#save, #select, #del, #allClear{
+    margin-left:auto; margin-right:auto;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  background: rgb(26, 212, 212);
+  cursor: pointer; /*カーソルをポインターの形（かたち）にする*/
+}
+table{
+  table-layout: fixed;
+  width : 80%;
+/*  margin-left : 3em;*/
+  /* border-collapse: collapse; */
+  opacity : 0.9;
+  margin-left:auto;
+  margin-right:auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table th{
+  background: lightseagreen;
+}
+table th,table td {
+  padding : 0.5em 0;
+  border : solid 0.1em black;
+  color : black;
+  text-align : center;
+  border: 2px solid black;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+/*     padding: 5px; */
+}
+table tr{
+  background : #46aef7;
+}
+.width10{
+  width:10%;
+}
+.width30{
+  width:30%;
+}
+.width60{
+  width:60%;
+}
+
+/********************************************************/
+/* レスポンシブ対応　メディアクエリを使ってCSSを切り替える */
+/* https://www.design-memo.com/coding/css-media-queries */
+/********************************************************/
+/* mobileのときのスタイル */
+@media screen and (max-width: 480px) {
+  /* ラベル */
+  label {
+    left:0.1em;
+  }
+
+  /* テキストエリア */
+  textarea{
+    left: 0.1em;
+  }
+
+  /* ボタン */
+  .btn-area{
+    margin-left:0.1em;
+  }
+  
+  table{
+    width: 100%;
+    margin-left: 0.1em;
+  }
+}
+
+/*******************************************************/
+/* class=back                                         */
+/* id=btn99 backボタン                                 */
+/*******************************************************/
+.back{
+  text-align: left;
+}
+#btn99{
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  color: rgba(4, 6, 36, 0.699);
+  font-size: 1.5em;
+  background: rgb(26, 212, 212);
+  cursor: pointer; /*カーソルをポインターの形（かたち）にする*/
+}
